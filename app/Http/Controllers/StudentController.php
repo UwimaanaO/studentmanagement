@@ -60,7 +60,8 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $students = Student::find($id); // Retrieve the specific student by ID
+        return view('students.edit', compact('students'))->with('flash_message', 'Student Updated!');
     }
 
     /**
@@ -68,7 +69,16 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //Update code to the database
+        $student=Student::find($id);
+        $incomingField=$request->validate([
+            'name'=>['required'],
+            'address'=>['required'],
+            'phone'=>['required'],
+            'email'=>['required','email', Rule::unique('students','email')]
+        ]);
+        $student->update($incomingField);
+        return redirect('students')->with('flash_message','Students Updated!');
     }
 
     /**

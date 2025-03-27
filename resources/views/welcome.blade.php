@@ -88,7 +88,7 @@ div.content {
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 
                             </ul>
@@ -96,13 +96,13 @@ div.content {
                                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                                 <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
-                        </div>
+                        </div>-->
                     </div>
                 </nav>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-3">
             <div class="sidebar">
                 <a class="active" href="#home">Home</a>
                 <a href="#">Student</a>
@@ -111,12 +111,11 @@ div.content {
                 <a href="#">Enrollment</a>
                 <a href="#">Payment</a>
               </div>
-              
-              <div class="content">
+            </div>
+              <div class="col-md-9">
                 @yield('content');
               </div>
             </div>
-        </div>
     </div>
 </body>
 

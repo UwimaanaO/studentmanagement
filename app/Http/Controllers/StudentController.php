@@ -23,7 +23,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        //Return a view for creation of student details
+        return view('students.create');
     }
 
     /**

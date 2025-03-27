@@ -26,6 +26,7 @@
                                 <tbody>
                                     @foreach ($students as $item)
                                         <tr>
+                                            <!--Helps to create Sequential S/N numbers-->
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$item->name}}</td>
                                             <td>{{$item->address}}</td>

@@ -33,19 +33,16 @@
                                             <td>{{$item->email}}</td>
                                             <td>
                                                 <a href="{{url('/students/' . $item->id)}}" title="View Student"><button
-                                                        class="btn btn-info btn-sm"><i class="fa fa-eye"></i>View</button></a>
+                                                        class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>View</button></a>
                                                 <a href="{{url('/students/' . $item->id . '/edit')}}"
-                                                    title="Edit Student"><button class="btn btn-primary btn btn-sm"><i
-                                                            class="fa fa-pencil-sqaure-o"
-                                                            aria-hidden="true"></i>Edit</button></a>
+                                                    title="Edit Student"><button class="btn btn-primary btn btn-sm"><i class="fa fa-pencil-sqaure-o" aria-hidden="true"></i>Edit</button></a>
 
                                                 <form action="{{url('/students' . '/' . $item->id)}}" method="POST"
                                                     accept-charset="UTF-8" style="display: inline">
                                                     {{method_field('DELETE')}}
                                                     {{csrf_field()}}
                                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete Student"
-                                                        onclick="return confirm(&quot;Confirm delete?&quot;)"><i
-                                                            class="fa fa-trash-o" aria-hidden="true"></i>Delete</button>
+                                                        onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i>Delete</button>
                                                 </form>
                                             </td>
                                         </tr>

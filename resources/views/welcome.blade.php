@@ -15,6 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
@@ -105,9 +106,9 @@ div.content {
             <div class="col-md-3">
             <div class="sidebar">
                 <a class="active" href="#home">Home</a>
-                <a href="#">Student</a>
-                <a href="#">Teacher</a>
-                <a href="#">Courses</a>
+                <a href="{{url('/students')}}">Student</a>
+                <a href="{{url('/teachers')}}">Teacher</a>
+                <a href="{{url('/courses')}}">Courses</a>
                 <a href="#">Enrollment</a>
                 <a href="#">Payment</a>
               </div>

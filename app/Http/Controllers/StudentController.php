@@ -31,6 +31,7 @@ class StudentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    //add the students details to the database
     public function store(Request $request)
     {
         $incomingField=$request->validate([
@@ -46,9 +47,12 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
+
     public function show(string $id)
     {
-        //
+        //finds details of a particular student with the ID
+        $students = Student::find($id);
+        return view('students.show')->with('students', $students);
     }
 
     /**

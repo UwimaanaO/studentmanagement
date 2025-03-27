@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
 class StudentController extends Controller
@@ -32,7 +33,14 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $incomingField=$request->validate([
+            'name'=>['required'],
+            'address'=>['required'],
+            'phone'=>['required'],
+            'email'=>['required','email', Rule::unique('students','email')]
+        ]);
+        $user=Student::create($incomingField);
+        return redirect('students')->with('flash_message','Student Added');
     }
 
     /**

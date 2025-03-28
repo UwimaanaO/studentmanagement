@@ -28,7 +28,8 @@
                                             <!--Helps to create Sequential S/N numbers-->
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$item->name}}</td>
-                                            <td>{{$item->course_id}}</td>
+                                            <!--course->name enables the function to return name-->
+                                            <td>{{$item->course->name}}</td>
                                             <td>{{$item->start_date}}</td>
                                             <td>
                                                 <a href="{{url('/batches/' . $item->id)}}" title="View course"><button

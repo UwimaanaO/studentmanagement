@@ -12,9 +12,9 @@
             <label for="">Enrollments Number</label><br>
             <input type="text" name="enroll_no" id="enrol_no" value="{{$enrollments->enroll_no}}" class="form-control"><br>
             <label for="">Batch</label><br>
-            <input type="text" name="batch_id" id="batch_id" value="{{$enrollments->batch_id}}" class="form-control"><br>
+            <input type="text" name="batch_id" id="batch_id" value="{{$enrollments->batch->name}}" class="form-control"><br>
             <label for="">Student</label><br>
-            <input type="text" name="student_id" id="student_id" value="{{$enrollments->student_id}}" class="form-control"><br>
+            <input type="text" name="student_id" id="student_id" value="{{$enrollments->student->name}}" class="form-control"><br>
             <label for="">Join Date</label><br>
             <input type="text" name="join_date" id="join_date" value="{{$enrollments->join_date}}" class="form-control"><br>
             <label for="">Fee</label><br>

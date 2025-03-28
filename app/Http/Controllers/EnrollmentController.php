@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Batch;
+use App\Models\Student;
 use App\Models\Enrollment;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -24,9 +26,16 @@ class EnrollmentController extends Controller
      */
     public function create()
     {
-        //Return a view for creation of Enrollment details
-        return view('enrollments.create');
+        // Get batches
+        $batches = Batch::pluck('name', 'id');
+    
+        // Get students
+        $students = Student::pluck('name', 'id');
+    
+        // Return the view with both batches and students data
+        return view('enrollments.create', compact('batches', 'students'));
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -34,15 +43,15 @@ class EnrollmentController extends Controller
     //add the enrollments details to the database
     public function store(Request $request)
     {
-        $incomingField=$request->validate([
-            'enroll_no'=>['required'],
-            'batch_id'=>['required'],
-            'student_id'=>['required'],
-            'join_date'=>['required'],
-            'fee'=>['required']
+        $incomingField = $request->validate([
+            'enroll_no' => ['required'],
+            'batch_id' => ['required'],
+            'student_id' => ['required'],
+            'join_date' => ['required'],
+            'fee' => ['required']
         ]);
-        $user=Enrollment::create($incomingField);
-        return redirect('enrollments')->with('flash_message','Enrollment Added');
+        $user = Enrollment::create($incomingField);
+        return redirect('enrollments')->with('flash_message', 'Enrollment Added');
     }
 
     /**
@@ -71,16 +80,16 @@ class EnrollmentController extends Controller
     public function update(Request $request, string $id)
     {
         //Update code to the database
-        $Enrollment=Enrollment::find($id);
-        $incomingField=$request->validate([
-            'enroll_no'=>['required'],
-            'batch_id'=>['required'],
-            'student_id'=>['required'],
-            'join_date'=>['required'],
-            'fee'=>['required']
+        $Enrollment = Enrollment::find($id);
+        $incomingField = $request->validate([
+            'enroll_no' => ['required'],
+            'batch_id' => ['required'],
+            'student_id' => ['required'],
+            'join_date' => ['required'],
+            'fee' => ['required']
         ]);
         $Enrollment->update($incomingField);
-        return redirect('enrollments')->with('flash_message','enrollments Updated!');
+        return redirect('enrollments')->with('flash_message', 'enrollments Updated!');
     }
 
     /**
@@ -90,6 +99,6 @@ class EnrollmentController extends Controller
     {
         //
         Enrollment::destroy($id);
-        return redirect('enrollments')->with('flash_message','Enrollment deleted!');
+        return redirect('enrollments')->with('flash_message', 'Enrollment deleted!');
     }
 }

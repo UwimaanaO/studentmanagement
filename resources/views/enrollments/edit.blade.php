@@ -16,7 +16,7 @@
             <label for="">Student</label><br>
             <input type="text" name="student_id" id="student_id" value="{{$enrollments->student->name}}" class="form-control"><br>
             <label for="">Join Date</label><br>
-            <input type="text" name="join_date" id="join_date" value="{{$enrollments->join_date}}" class="form-control"><br>
+            <input type="date" name="join_date" id="join_date" value="{{$enrollments->join_date}}" class="form-control"><br>
             <label for="">Fee</label><br>
             <input type="text" name="fee" id="fee" value="{{$enrollments->fee}}" class="form-control"><br>
             <input type="submit" value="Update" class="btn btn-success">

@@ -20,7 +20,7 @@
                 @endforeach
             </select>
             <label for="">Join Date </label><br>
-            <input type="text" name="join_date" id="join_date" class="form-control" required><br>
+            <input type="date" name="join_date" id="join_date" class="form-control" required><br>
             <label for="">Fee</label><br>
             <input type="text" name="fee" id="fee" class="form-control" required><br>
             <input type="submit" value="Save" class="btn btn-success"><br>

@@ -8,7 +8,7 @@
                     </div>
                     <div class="card-body">
                         <a href="{{url('/enrollments/create')}}" class="btn btn-success" title="Add new course"><i
-                                class="fa fa plus" aria-hidden="true"></i>Add New</a>
+                                class="fa fa-plus" aria-hidden="true"></i>Add New</a>
                         <br>
                         <br>
                         <div class="table-responsive">

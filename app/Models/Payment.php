@@ -17,4 +17,8 @@ class Payment extends Model
     public function enrollment(){
         return $this->belongsTo(Enrollment::class);
     }
+    public function student()
+    {
+        return $this->hasOneThrough(Student::class, Enrollment::class, 'id', 'id', 'enrollment_id', 'student_id');
+    }
 }

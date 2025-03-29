@@ -37,7 +37,7 @@
                                 </a>
                                 <a href="{{ url('/payments/' . $item->id . '/edit') }}" title="Edit payment">
                                     <button class="btn btn-primary btn-sm">
-                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                        <i class="fas fa-pencil-alt" aria-hidden="true"></i> Edit
                                     </button>
                                 </a>
                                 <form action="{{ url('/payments/' . $item->id) }}" method="POST" style="display: inline;">
@@ -45,9 +45,10 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete payment"
                                         onclick="return confirm('Confirm delete?')">
-                                        <i class="fa fa-trash-o" aria-hidden="true"></i> Delete
+                                        <i class="fas fa-trash-alt" aria-hidden="true"></i> Delete
                                     </button>
                                 </form>
+                                <a href="{{url('/report/report1/'. $item->id)}}" title="Print Payment" class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>Print</a>
                             </td>
                         </tr>
                     @endforeach

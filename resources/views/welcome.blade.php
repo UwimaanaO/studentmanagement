@@ -112,11 +112,17 @@ div.content {
                 <a href="{{url('/batches')}}">Batches</a>
                 <a href="{{url('/enrollments')}}">Enrollment</a>
                 <a href="{{url('/payments')}}">Payment</a>
+                <form action="{{ route('user.logout') }}" method="POST">
+                  @csrf
+                  <button class="btn btn-danger" style="margin-top: 5%"><i
+                          class="fas fa-sign-out-alt"></i>Logout</button>
+              </form>
               </div>
             </div>
               <div class="col-md-9">
                 @yield('content')
               </div>
+
             </div>
     </div>
 </body>
